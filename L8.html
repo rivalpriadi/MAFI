@@ -1,0 +1,28 @@
+Lihat video tutorial! 
+Buat satu select dengan opsi: sudah bayar dan belum bayar, 
+satu tombol dengan caption Ambil KRS. 
+Jika belum bayar maka tombol disabled, 
+sebaliknya enabled dan muncul alert Anda boleh KRS.
+<hr/>
+<label>Status Bayar</label>
+<select id="status_bayar" onchange="setTombol()">
+    <option value="1">Sudah</option>
+    <option selected value="0"> Belum</option>
+</select>
+<hr/>
+<button disabled id="ambil_krs" onclick="alert ('Anda Boleh Ambil KRS')"> Ambil KRS</button>
+
+<script>
+    function setTombol(){
+        let status_bayar = document.getElementById("status_bayar").value;
+        console.log(status_bayar);
+
+        if(status_bayar != 1){
+            console.log("Belum Bisa");
+           document.getElementById("ambil_krs").disabled = true;
+        }else {
+            console.log("Maka Boleh KRS");
+            document.getElementById("ambil_krs").disabled = false;         
+        }
+    }
+</script>

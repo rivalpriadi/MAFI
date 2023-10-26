@@ -1,0 +1,31 @@
+Lihat video tutorial! Buatlah dua input, 
+satu label operasi tambah, satu tombol, dan satu komponen label untuk hasil. 
+Tombol digunakan untuk melakukan aksi tambah. 
+Jika input A AND input B integer maka lakukan aksi hitung.
+
+<hr>
+<input id="input1" />
+<label>+</label>
+<input id="input2"/>
+<button onclick="hitung()">hitung</button>
+<label id="hasil">hasil</label>
+
+<script>
+    function    hitung(){
+        // alert("Sedang Melakukan Proses Hitung");
+        let input1 = document.getElementById("input1").value;
+        let input2 = document.getElementById("input2").value;
+        let hasil;
+
+        input1 = parseInt(input1);
+        input2 = parseInt(input2);
+
+        if (!isNaN(input1) && !isNaN(input2)) {
+            hasil = input1 + input2;
+        }else{
+            hasil = "nilai input invalid";
+        }
+        document.getElementById("hasil").innerHTML = hasil;
+        console.log(typeof input1, typeof input2, hasil);
+    }
+</script>

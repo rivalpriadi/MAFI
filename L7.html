@@ -1,0 +1,40 @@
+Lihat video tutorial! 
+Buat satu input untuk input nilai akhir, 
+satu tombol untuk aksi. 
+Satu label untuk hasil. Jika input >= 85 maka A, 
+jika input >= 70 maka B, dst. Jika A atau B atau C maka Lulus,
+selainnya Tidak Lulus.
+
+<hr/>
+<input type="number" id="na"/><button onclick="cek()">Cek</button>
+<div>Huruf Mutu: <label id="hm">??</label></div>
+<div>Keterangan: <label id="ket">??</label></div>
+<script>
+    function cek() {
+        let na= document.getElementById("na").value;
+        let hm;
+        let ket;
+        na = parseInt(na);
+        if (isNaN(na)) {
+            hm = "??";
+            ket = "??";
+        } else {
+            if(na >= 85){
+                hm = "A";
+            }else if (na >= 70) {
+                hm = "B";
+            }else if (na >= 50) {
+                hm = "C";
+            }else{
+                hm = "D";
+            }
+        }
+        if (hm=="A" || hm=="B" || hm=="C") {
+            ket ="LULUS"
+        }else{
+            ket ="TIDAK LULUS"
+        }
+        document.getElementById("hm").innerHTML = hm;
+        document.getElementById("ket").innerHTML = ket;
+    }
+</script>
